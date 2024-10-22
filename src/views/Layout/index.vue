@@ -16,6 +16,8 @@ onMounted(() => categoryStore.getCategory())
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
+  <!-- 添加key，破坏复用机制 强制销毁重建,但是太粗暴，会所有请求都会重新发送，存在浪费所以采用onbeforerouteuodate，精细化配置 -->
+  <!-- <RouterView :key="$route.fullPath" /> -->
   <RouterView />
   <LayoutFooter />
 </template>
